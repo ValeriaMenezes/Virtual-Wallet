@@ -18,11 +18,11 @@ const wallet = (state = INICIAL_STATE, action) => {
       ...state,
       expenses: [...state.expenses, {
         id: state.expenses.length,
-        value: action.payload.valor,
-        description: action.payload.descrição,
-        currency: action.payload.moeda,
-        method: action.payload.pagamento,
-        tag: action.payload.categoria,
+        value: action.payload.value,
+        description: action.payload.description,
+        currency: action.payload.currency,
+        method: action.payload.method,
+        tag: action.payload.tag,
         exchangeRates: action.payload.exchangeRates,
       }],
     };
