@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class Table extends Component {
   render() {
+    const { expenses } = this.props;
     return (
       <div>
         <table>
@@ -18,10 +21,40 @@ class Table extends Component {
               <th>Editar/Excluir</th>
             </tr>
           </thead>
+          <tbody>
+            {
+              expenses.map((
+                { id, value, description, currency, method, tag, exchangeRates },
+              ) => (
+                <tr key={ id }>
+                  <td>{ description }</td>
+                  <td>{ tag }</td>
+                  <td>{ method }</td>
+                  <td>{ Number(value).toFixed(2)}</td>
+                  <td>{ exchangeRates[currency].name}</td>
+                  <td>{ Number(exchangeRates[currency].ask).toFixed(2) }</td>
+                  <td>
+                    {
+                      Number(value * exchangeRates[currency].ask).toFixed(2)
+                    }
+                  </td>
+                  <td>{ exchangeRates[currency].codein }</td>
+                </tr>
+              ))
+            }
+          </tbody>
         </table>
       </div>
     );
   }
 }
 
-export default Table;
+Table.propTypes = {
+  expenses: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  expenses: state.wallet.expenses,
+});
+
+export default connect(mapStateToProps)(Table);

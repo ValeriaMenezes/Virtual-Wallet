@@ -14,7 +14,7 @@ class Header extends Component {
       console.log(sum);
     });
     console.log(sum);
-    return sum.toFixed(2);
+    return Number(sum).toFixed(2);
   };
 
   render() {
