@@ -2,6 +2,7 @@ export const LOGIN = 'LOGIN';
 export const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
 export const CLICK = 'CLICK';
 export const NEW_THUNK = 'NEW_THUNK';
+export const DELETE = 'DELETE';
 
 export const userAction = (payload) => ({
   type: LOGIN,
@@ -39,3 +40,8 @@ export const actionThunk = (state) => async (dispatch) => {
   const newResponse = { ...state, exchangeRates: response };
   dispatch(newThunk(newResponse));
 };
+
+export const actionDelete = (payload) => ({
+  type: DELETE,
+  payload,
+});
