@@ -7,9 +7,12 @@ class Table extends Component {
   handleClick = (id) => {
     const { expenses, remove } = this.props;
     const filterRemove = expenses.filter((item) => item.id !== id);
-    console.log('clicou', remove);
     remove(filterRemove);
   };
+
+  // filtrar o item da tabela pelo id
+  // quando clicar no btn habilitar form pra editar
+  // muda no state global
 
   render() {
     const { expenses } = this.props;
