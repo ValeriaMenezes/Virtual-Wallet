@@ -3,6 +3,8 @@ export const REQUEST_SUCCESS = 'REQUEST_SUCCESS';
 export const CLICK = 'CLICK';
 export const NEW_THUNK = 'NEW_THUNK';
 export const DELETE = 'DELETE';
+export const EDITOR = 'EDITOR';
+export const EDIT_ID = 'EDIT_ID';
 
 export const userAction = (payload) => ({
   type: LOGIN,
@@ -43,5 +45,15 @@ export const actionThunk = (state) => async (dispatch) => {
 
 export const actionDelete = (payload) => ({
   type: DELETE,
+  payload,
+});
+
+export const actionEditor = (payload) => ({
+  type: EDITOR,
+  payload,
+});
+
+export const actionIdEdit = (payload) => ({
+  type: EDIT_ID,
   payload,
 });

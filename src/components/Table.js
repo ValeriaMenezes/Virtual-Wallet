@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { actionDelete } from '../redux/actions';
+import { actionDelete, actionEditor } from '../redux/actions';
 
 class Table extends Component {
   handleClick = (id) => {
@@ -10,9 +10,10 @@ class Table extends Component {
     remove(filterRemove);
   };
 
-  // filtrar o item da tabela pelo id
-  // quando clicar no btn habilitar form pra editar
-  // muda no state global
+  handleClickEdit = (id) => {
+    const { editorButton } = this.props;
+    editorButton(id);
+  };
 
   render() {
     const { expenses } = this.props;
@@ -58,6 +59,13 @@ class Table extends Component {
                     >
                       Excluir
                     </button>
+                    <button
+                      type="button"
+                      data-testid="edit-btn"
+                      onClick={ () => this.handleClickEdit(id) }
+                    >
+                      Editar
+                    </button>
                   </td>
                 </tr>
               ))
@@ -72,14 +80,18 @@ class Table extends Component {
 Table.propTypes = {
   expenses: PropTypes.func.isRequired,
   remove: PropTypes.func.isRequired,
+  editorButton: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   expenses: state.wallet.expenses,
+  editor: state.wallet.editor,
+  idToEdit: state.wallet.idToEdit,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   remove: (remove) => dispatch(actionDelete(remove)),
+  editorButton: (id) => dispatch(actionEditor(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);

@@ -11,11 +11,19 @@ class Header extends Component {
       const curr = item.currency;
       const { ask } = item.exchangeRates[curr];
       sum += Number(currency) * Number(ask);
-      console.log(sum);
     });
-    console.log(sum);
     return Number(sum).toFixed(2);
   };
+  // calculation = () => {
+  //   const { expenses } = this.props;
+  //   const tot = expenses.reduce((acc, nextElement) => {
+  //     let total = acc;
+  //     const accCurr = nextElement.currency;
+  //     total += Number(nextElement.exchangeRates[accCurr].ask * nextElement.value);
+  //     return Number(total.toFixed(2));
+  //   }, 0);
+  //   return tot;
+  // };
 
   render() {
     const { emailUser, expenses } = this.props;
@@ -42,7 +50,6 @@ Header.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  // console.log('1', state.wallet.expenses);
   emailUser: state.user.email,
   expenses: state.wallet.expenses,
 });
