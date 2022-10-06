@@ -14,16 +14,6 @@ class Header extends Component {
     });
     return Number(sum).toFixed(2);
   };
-  // calculation = () => {
-  //   const { expenses } = this.props;
-  //   const tot = expenses.reduce((acc, nextElement) => {
-  //     let total = acc;
-  //     const accCurr = nextElement.currency;
-  //     total += Number(nextElement.exchangeRates[accCurr].ask * nextElement.value);
-  //     return Number(total.toFixed(2));
-  //   }, 0);
-  //   return tot;
-  // };
 
   render() {
     const { emailUser, expenses } = this.props;

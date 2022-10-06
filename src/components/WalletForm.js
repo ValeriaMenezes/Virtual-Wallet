@@ -10,7 +10,7 @@ class WalletForm extends Component {
     descrição: '',
     moeda: 'USD',
     pagamento: 'Dinheiro',
-    categoria: 'Alimentação',
+    // categoria: 'Alimentação',
   };
 
   componentDidMount() {
