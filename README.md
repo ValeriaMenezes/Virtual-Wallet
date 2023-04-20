@@ -15,6 +15,7 @@ Neste projeto foi desenvolvido uma carteira de controle de gastos com conversor 
 >[![JavaScript][JavaScript]][JavaScript-url]
 [![REACT][REACT]][REACT-url]
 [![REDUX][REDUX]][REDUX-url]
+[![RTL][RTL]][RTL-url]
 
 [JavaScript]: https://img.shields.io/badge/-JavaScript-F7DF1E?style=for-the-badge&logo=node.js&logoColor=black
 [JavaScript-url]: https://www.javascript.com
@@ -24,6 +25,9 @@ Neste projeto foi desenvolvido uma carteira de controle de gastos com conversor 
 
 [REDUX]: https://img.shields.io/badge/-Redux-764abc?style=for-the-badge&logo=redux&logoColor=black
 [REDUX-url]: https://redux.js.org
+
+[RTL]: https://img.shields.io/badge/Testing%20library-E33332?style=for-the-badge&logo=testing-library&logoColor=white
+[RTL-url]: https://testing-library.com/docs/react-testing-library/intro/
 
 ## Como Rodar
 
